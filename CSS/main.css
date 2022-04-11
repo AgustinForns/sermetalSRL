@@ -255,15 +255,6 @@ footer{
     border: 1px gray solid;
 }
 
-@keyframes aparecer{
-
-    from{
-        transform: scale(1.0);
-    }
-    to{
-        transform: scale(1.035);
-    }
-}
 
 
  
@@ -713,6 +704,7 @@ footer{
       margin: 1px;
         
     }
+
 
 
     /*servicios*/
