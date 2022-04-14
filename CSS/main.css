@@ -258,10 +258,10 @@ footer{
 @keyframes aparecer{
 
     from{
-        transform: scale(1.0);
+        transform: scale(0.95);
     }
     to{
-        transform: scale(1.035);
+        transform: scale(1);
     }
 }
 
@@ -449,12 +449,17 @@ footer{
 
 .datos{
     font-size: 15px;
-    color: rgb(203, 203, 223);
+    color: gray;
     font-weight: bold;
 }
 
 .imgUbicacion{
     border: 2px solid gray;
+}
+
+.comoLlegar{
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 
@@ -621,7 +626,7 @@ footer{
     /* adapatacion de datos empresa*/
     .datos{
         font-size: 20px;
-        color: rgb(203, 203, 223);
+        color: gray;
         font-weight: bold;
         margin: 50px;
     }
