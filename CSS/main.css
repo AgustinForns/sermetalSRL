@@ -63,7 +63,7 @@ header nav ul li{
 }
 
 header nav ul li:hover{
-    transform: scale(1.2);
+    transform: scale(1.01);
     
 }
 
@@ -87,10 +87,10 @@ header div a img:hover{
 
 .tituloLemaEmpresa{
     font-size: 15px;
-    text-align: end;
+    text-align: center;
     color: aliceblue;
-    margin-bottom: 100px;
     margin-right: 30px;
+    margin-top:300px;
     
 }
 
@@ -157,6 +157,7 @@ main{
 
 .noVisible1{
     display: none;
+    
 }
 /*noticias*/
 
@@ -167,8 +168,6 @@ main{
 
 
 .sectionNoticias{
-    display: flex;
-    flex-direction: column;
     background-image: linear-gradient(to left, rgb(59, 58, 78), rgb(139, 151, 219));
     padding: 0px 20px 20px 20px;
 }
@@ -182,12 +181,10 @@ main{
     transform: scaleY(1.035);
 }
 .cajaNoticias{
-    display: flex;
-    flex-direction: column;
     align-items: center;
     background-color: rgb(171, 169, 187);
     border: 2px solid gray;
-    padding: 10px 30px 30px 30px;
+    padding: 10px 10px 30px 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     
@@ -490,15 +487,12 @@ footer{
     
 
     .logoMenu{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        height: 40px;
-        margin-top: 0px;
-        margin-bottom: 500px;
+      
+        margin-top: 15px;
+       
         
     }
+
 
 
     
@@ -514,9 +508,8 @@ footer{
 
     .tituloLemaEmpresa{
         font-size: 15px;
-        text-align: end;
+        text-align: center;
         color: aliceblue;
-        margin-bottom: 100px;
         margin-right: 30px;
         
     }
@@ -556,13 +549,11 @@ footer{
     
 
     .cajaNoticias{
-        display: flex;
-        flex-direction: column ;
         align-items: center;
         background-color: rgb(171, 169, 187);
         border: 2px solid gray;
-        padding: 10px 30px 30px 30px;
-      margin: 10px;
+        padding: 10px 10px 30px 10px;
+       
         
     }
 
@@ -667,11 +658,10 @@ footer{
    
 
     .logoMenu{
-        display: flex;
-        flex-direction: row;
+        
         justify-content: space-between;
         align-items: baseline;
-        margin-top: 15px;
+        
        
         
     }
@@ -680,9 +670,8 @@ footer{
 
     .tituloLemaEmpresa{
         font-size: 15px;
-        text-align: end;
+        text-align: center;
         color: aliceblue;
-        margin-bottom: 150px;
         margin-right: 50px;
         
     }
@@ -710,13 +699,12 @@ footer{
     }
 
     .cajaNoticias{
-        display: flex;
-        flex-direction: column ;
+        
         align-items: center;
         background-color: rgb(171, 169, 187);
         border: 2px solid gray;
         padding: 10px 20px 20px 20px;
-      margin: 1px;
+    
         
     }
 
