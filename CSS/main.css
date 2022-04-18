@@ -16,7 +16,7 @@
                         "footer footer footer footer";
     justify-content: center;
     align-items: center;
-    background-color: beige;
+    background-color: rgb(189, 184, 184);
    
 }
 
@@ -39,9 +39,8 @@ header{
     padding: 10px 10px 10px 10px;
     background-image: url('../img/amolado.jpg');
     background-position: center;
-    background-size: cover;  
     background-repeat: no-repeat;
-    
+ 
 }
 
 header h1{
@@ -60,19 +59,33 @@ header nav ul li{
    margin: 10px;
    list-style: none;
    margin: 2rem;
+   
 }
 
 header nav ul li:hover{
     transform: scale(1.2);
+    color: white;
     
 }
 
-header nav ul li a:hover{
-    box-shadow: 2px 2px gray;
+.botonNavPrincipal :hover{
+    color: white;
 }
+
+header nav ul li a:hover{
+    color: white;
+    
+}
+
+
 
 header div a img:hover{
     transform: scale(1.05);
+    
+}
+
+.logo{
+    text-align: center;
 }
 
 .botonNavPrincipal{
@@ -80,16 +93,19 @@ header div a img:hover{
     color: white;
     font-size: 1.5rem;
     background-color: rgb(17, 18, 19);
+    border: 2px solid gray;
     border-radius: 100px;
     padding: 10px;
 
 }
 
+
+
+
 .tituloLemaEmpresa{
     font-size: 15px;
     text-align: end;
     color: aliceblue;
-    margin-bottom: 100px;
     margin-right: 30px;
     
 }
@@ -108,8 +124,10 @@ header div a img:hover{
 
 
 .logoMenu{
+    display: flex;
+    flex-direction: column;
     margin-top: 0px;
-    margin-bottom: 500px;
+    margin-bottom: 5rem;
     
 }
 
@@ -117,25 +135,25 @@ header div a img:hover{
 /*imagenes de presentacion*/
 main{
     grid-area: main;
-    background-color: beige;
+    background-color: rgb(189, 184, 184);
     padding-top: 10px;
 }
 
 .espacioBlanco1{
     grid-area: espacioBlanco1;
-    background-color: beige;
+    background-color: rgb(189, 184, 184);
 }
 
 .espacioBlanco2{
     grid-area: espacioBlanco2;
-    background-color: beige;
+    background-color: rgb(189, 184, 184);
 }
 
 
 .sectionImgPresentacion{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 10px 50px 10px 50px;
 }
@@ -226,16 +244,18 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-between;
-    gap: 3px;
+    gap: 5px;
     border: 2px solid black;
     text-align: center;
     margin-bottom: 1rem;
+    padding: 0.5rem 0.2rem 0.5rem 0.2rem;
     
 }
 
 .imgLogos{
     width: 7rem;
     height: auto;
+    border: 1px solid gray;
 }
 
 /*pie de pagina*/
@@ -304,7 +324,7 @@ footer{
 .headerSobreNosotros{
     background-image: url('../img/Perspectiva.jpg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-size: 700px 900px ;
     
 }
 
@@ -316,7 +336,7 @@ footer{
     border-radius: 50px;
     margin: 30px 30px 30px 30px;
     padding: 30px;
-    background-color: rgb(189, 188, 188);
+    background-color: gray;
     
     
 }
@@ -334,7 +354,39 @@ footer{
     
 }
 
+.baseCajaHistoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 5px solid gray;
+    margin: 30px 30px 30px 30px;
+    padding: 15px;
+    background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
+    
+   
+    
+}
 
+.baseCajaMisionVision{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 5px solid gray;
+    margin: 30px 30px 30px 30px;
+    padding: 15px;
+    background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
+    
+}
+
+.cajaMisionVision{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid gray;
+    padding: 10px 30px 30px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -342,10 +394,17 @@ footer{
 .infoCajasInformacion{
    /*  text-align: start; */
     margin: 15px;
+    text-align: center;
+   
 }
 
 .imgSobreNosotros{
-    float: right;
+    float:initial;
+    margin: 5px;
+}
+
+.divImgSobreNosotros{
+    text-align: center;
 }
 
 .tituloValores{
@@ -358,30 +417,56 @@ footer{
 .cajaServicios{
     display: flex;
     flex-direction: column;
-    background-color: rgb(191, 190, 231);
-    border: 1px solid gray;
+    
+    border-left: 5px solid gray;
+    border-bottom: 5px gray solid;
     margin: 10px;
     
 }
 
+
 .infoServicios{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    flex-grow: unset;
     gap: 10px;
     margin: 10px;
 }
 
 .encabezadoServicios{
-    background-color: rgb(85, 119, 163);
+    background-color: rgb(110, 110, 173) ;
     text-align: center;
 }
 
 
+/*industrias*/
+
+.layoutIndustrias{
+    display: flex;
+    flex-direction: column;
+}
+
+.cajaIndustrias{
+    display: flex;
+    flex-direction: column;
+    
+    border-left: 5px solid gray;
+    border: 5px gray solid;
+    margin: 10px;
+    
+
+}
 
 
 /*Contacto*/
+/* propiedades del header*/
+.headerContacto{
+    background-image: url('../img/entrada.jpg');
+    background-repeat: no-repeat;
+    background-size: 600px 900px;
+    
+}
+
+
 /* propiedades del main*/
 
 
@@ -439,18 +524,13 @@ footer{
     align-items: center;
 }
 
-.cajaDatos{
-    background-color: gray;
-    border: 3px solid black;
-    border-radius: 50px;
-    margin: 0px 30px 50px 30px;
-    padding: 20px;
-}
+
 
 .datos{
     font-size: 15px;
     color: gray;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .imgUbicacion{
@@ -468,6 +548,16 @@ footer{
 @media only screen and (min-width:600px){
 
     /* adaptacion de header */
+    header{
+        grid-area: header;
+        padding: 10px 10px 10px 10px;
+        background-image: url('../img/amolado.jpg');
+        background-position: center;
+        background-size: cover;  
+        background-repeat: no-repeat;
+        
+    }
+
     header h1{
         text-align: end;
         font-size: 40px;
@@ -505,8 +595,9 @@ footer{
     .botonNavPrincipal{
         text-decoration: none;
         color: white;
-        font-size: 18px;
+        font-size: 1.05rem;
         background-color: rgb(17, 18, 19);
+        border: 2px gray solid;
         border-radius: 100px;
         padding: 5px;
     
@@ -557,8 +648,7 @@ footer{
 
     .cajaNoticias{
         display: flex;
-        flex-direction: column ;
-        align-items: center;
+        flex-direction: row ;
         background-color: rgb(171, 169, 187);
         border: 2px solid gray;
         padding: 10px 30px 30px 30px;
@@ -567,6 +657,13 @@ footer{
     }
 
     /*sobre nosotros*/
+    .headerSobreNosotros{
+        background-image: url('../img/Perspectiva.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+
     .layoutValores{
         display: flex;
         flex-direction: row;
@@ -580,6 +677,23 @@ footer{
         align-content: flex-start;
     }
 
+ 
+
+    .cajaMisionVision{
+        display: flex;
+        flex-direction: column ;
+        align-items: center;
+        border: 2px solid gray;
+        padding: 10px 30px 30px 30px;
+      margin: 10px;
+    }
+    .imgSobreNosotros{
+        float: right;
+        margin: 5px;
+    }
+
+  
+
 
     /* adaptacion de cajas de informacion general */
 
@@ -591,7 +705,7 @@ footer{
         border-radius: 50px;
         margin: 30px 30px 30px 30px;
         padding: 30px;
-        background-color: rgb(189, 188, 188);
+        background-color: gray;
         
         
     }
@@ -608,34 +722,79 @@ footer{
         
     }
 
+    .baseCajaHistoria{
+        display: flex;
+        flex-direction: row;
+        border: 2px solid transparent;
+        border-left: 5px solid gray;
+        margin: 30px 30px 30px 30px;
+        padding: 15px;
+        
+    }
+
     .infoCajasInformacion{
         text-align: start;
         margin: 15px;
     }
 
     /*adpatacion servicios*/
+
+
+        
+
     .infoServicios{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 10px;
     }
 
-    /*contacto*/
+    .cajaServicios{
+        display: flex;
+        flex-direction: column;
+        border-left: 5px solid gray;
+        margin: 10px;
+    }
+
+ 
     
+
+
+
+    .layoutServicios{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .layout{
+        display: flex;
+        flex-direction: column;
+         
+    } 
+
+ 
+    /*contacto*/
+    .headerContacto{
+        background-image: url('../img/entrada.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 
     /* adapatacion de datos empresa*/
     .datos{
         font-size: 20px;
         color: gray;
         font-weight: bold;
-        margin: 50px;
+        margin: 40px;
     }
 
     .imgUbicacion{
         width: 500px;
         height: 300px;
     }
-
+    
+ 
 }
 
 
@@ -706,17 +865,17 @@ footer{
 
     .cajaNoticiasGeneral{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .cajaNoticias{
         display: flex;
-        flex-direction: column ;
-        align-items: center;
+        flex-direction: row;
+        
         background-color: rgb(171, 169, 187);
         border: 2px solid gray;
         padding: 10px 20px 20px 20px;
-      margin: 1px;
+      margin: 10px;
         
     }
 
@@ -732,10 +891,9 @@ footer{
     }
 
     .cajaServicios{
-        display: flex;
+        display: flex; 
         flex-direction: column;
-        background-color: rgb(191, 190, 231);
-        border: 1px solid gray;
+        border-left: 5px solid gray;
         margin: 10px;
     }
 
@@ -755,6 +913,8 @@ footer{
 
 
      /*contacto*/
+
+
      .contacto{
         display: flex;
         flex-direction: row;
