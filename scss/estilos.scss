@@ -1,5 +1,13 @@
 
-@import "utilities/variables";
+@import "utilities/variables.scss";
+@import "utilities/extensiones.scss";
+
+@import "utilities/estilos600";
+
+@import "utilities/estilos1024";
+
+
+
 
 
 .contenedor{
@@ -23,13 +31,12 @@
     header{
         grid-area: header;
         padding: 10px 10px 10px 10px;
-        background-image: url('../img/amolado.jpg');
+        background-image: map-get($map: $index, $key: imgIndex);
         background-position: center;
         background-repeat: no-repeat;
 
         .logoMenu{
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
             margin-top: 0px;
             margin-bottom: 5rem;
 
@@ -123,8 +130,7 @@
         padding-top: 10px;
 
         .sectionImgPresentacion{
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
             justify-content: space-between;
             align-items: center;
             margin: 10px 50px 10px 50px;
@@ -147,8 +153,7 @@
 
         .sectionNoticias{
 
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
             background-image: linear-gradient(to left, rgb(59, 58, 78), rgb(139, 151, 219));
             padding: 0px 20px 20px 20px;
 
@@ -159,12 +164,10 @@
             }
 
             .cajaNoticiasGeneral{
-                display: flex;
-                flex-direction: column;
+                @include flexColumn;
 
                 .cajaNoticias{
-                    display: flex;
-                    flex-direction: column;
+                    @include flexColumn;
                     align-items: center;
                     background-color: rgb(171, 169, 187);
                     border: 2px solid gray;
@@ -206,6 +209,7 @@
         }
 
         .sectionLogos{
+            @include flexColumn;
 
             .cajaEncabezadoLogoEmpresas{
                 text-align: center;
@@ -213,9 +217,8 @@
             }
 
             .cajaLogosEmpresas{
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
+                @include flexRow;
+                flex-wrap: wrap; 
                 justify-content: center;
                 align-content: space-between;
                 gap: 5px;
@@ -231,7 +234,7 @@
                 }
 
                 .noVisible{
-                    display: none;
+                   display: none;
                 }
                 
             }
@@ -298,13 +301,12 @@
     .headerSobreNosotros{
         grid-area: header;
         padding: 10px 10px 10px 10px;
-        background-image: url('../img/Perspectiva.jpg');
+        background-image: map-get($map: $sobreNosotros, $key: imgSobreNosotros);       
         background-repeat: no-repeat;
         background-size: 700px 900px ;
 
         .logoMenu{
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
             margin-top: 0px;
             margin-bottom: 5rem;
 
@@ -380,13 +382,10 @@
 
 
     .baseCajaHistoria{
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
         align-items: center;
         border-left: 5px solid gray;
-        margin: 30px 30px 30px 30px;
-        padding: 15px;
-        background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
+        @extend %baseCajaSobreNosotros;
 
         .infoCajasInformacion{
             margin: 15px;
@@ -401,17 +400,13 @@
     }
 
     .baseCajaMisionVision{
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
         align-items: center;
         border-left: 5px solid gray;
-        margin: 30px 30px 30px 30px;
-        padding: 15px;
-        background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
+        @extend %baseCajaSobreNosotros;
 
         .cajaMisionVision{
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
             align-items: center;
             border: 2px solid gray;
             padding: 10px 30px 30px 30px;
@@ -442,7 +437,85 @@
 
     /*header servicios*/
 
-    /*es el mismo que el del index. se tiene que cambiar la imagen*/
+    .headerServicios{
+        grid-area: header;
+        padding: 10px 10px 10px 10px;
+        background-image: map-get($map: $servicios, $key: imgServicios);       
+        background-repeat: no-repeat;
+        background-size: 700px 900px ;
+
+        .logoMenu{
+            @include flexColumn;
+            margin-top: 0px;
+            margin-bottom: 5rem;
+
+            .logo{
+                text-align: center; /*clase .logo*/
+
+
+            
+                img{
+                &:hover{
+                    transform: scale(1.05);
+                    }
+                }
+            }
+        
+
+            .menu{
+                padding: 10px;
+                margin: 1px 15px 50px 10px;
+                text-align: start;
+
+                ul li{
+                    margin: 10px;
+                    list-style: none;
+                    margin: 2rem;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: white;
+                            
+                            }
+                        
+                    .botonNavPrincipal{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 1.5rem;
+                        background-color: rgb(17, 18, 19);
+                        border: 2px solid gray;
+                        border-radius: 100px;
+                        padding: 10px;
+                        &:hover{
+                            color: white;                    
+                                }
+                        
+                    }
+                }
+            }
+        }
+
+        .tituloLemaEmpresa{
+            font-style: italic; /*clase .lemaEmpresa*/
+            font-weight: bold;
+            color: azure;
+            text-align: end;
+
+            h1{
+                text-align: end;
+                font-size: 25px;
+                color: azure;
+            }
+            
+            .lemaEmpresa{
+                font-style: italic; /*clase .lemaEmpresa*/
+                font-weight: bold;
+                color: azure;
+                text-align: end;
+            }
+        }
+
+        
+    }
 
 
     /*main servicios*/
@@ -452,8 +525,8 @@
         .layoutServicios{
             
             .cajaServicios{
-                display: flex;
-                flex-direction: column;
+                @include flexColumn;
+            
                 border-left: 5px solid gray;
                 border-bottom: 5px gray solid;
                 margin: 10px;
@@ -464,8 +537,7 @@
                 }
 
                 .infoServicios{
-                    display: flex;
-                    flex-direction: column;
+                    @include flexColumn;
                     gap: 10px;
                     margin: 10px;
 
@@ -480,18 +552,93 @@
 
     /*header de indutrias*/
 
-    /*es el mismo que el del index. se tiene que cambiar la imagen*/
+    .headerIndustrias{
+        grid-area: header;
+        padding: 10px 10px 10px 10px;
+        background-image: map-get($map: $industrias, $key: imgIndustrias);       
+        background-repeat: no-repeat;
+        background-size: 700px 900px ;
+
+        .logoMenu{
+            @include flexColumn;
+            margin-top: 0px;
+            margin-bottom: 5rem;
+
+            .logo{
+                text-align: center; /*clase .logo*/
+
+
+            
+                img{
+                &:hover{
+                    transform: scale(1.05);
+                    }
+                }
+            }
+        
+
+            .menu{
+                padding: 10px;
+                margin: 1px 15px 50px 10px;
+                text-align: start;
+
+                ul li{
+                    margin: 10px;
+                    list-style: none;
+                    margin: 2rem;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: white;
+                            
+                            }
+                        
+                    .botonNavPrincipal{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 1.5rem;
+                        background-color: rgb(17, 18, 19);
+                        border: 2px solid gray;
+                        border-radius: 100px;
+                        padding: 10px;
+                        &:hover{
+                            color: white;                    
+                                }
+                        
+                    }
+                }
+            }
+        }
+
+        .tituloLemaEmpresa{
+            font-style: italic; /*clase .lemaEmpresa*/
+            font-weight: bold;
+            color: azure;
+            text-align: end;
+
+            h1{
+                text-align: end;
+                font-size: 25px;
+                color: azure;
+            }
+            
+            .lemaEmpresa{
+                font-style: italic; /*clase .lemaEmpresa*/
+                font-weight: bold;
+                color: azure;
+                text-align: end;
+            }
+        }
+
+        
+    }
 
     /*main de indsutrias*/
 
     .layoutIndustrias{
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
 
         .cajaIndustrias{
-            display: flex;
-            flex-direction: column; 
-            border-left: 5px solid gray;
+            @include flexColumn; 
             border: 5px gray solid;
             margin: 10px;
 
@@ -501,8 +648,7 @@
             }
 
             .infoServicios{
-                display: flex;
-                flex-direction: column;
+                @include flexColumn;
                 gap: 10px;
                 margin: 10px;
 
@@ -519,14 +665,13 @@
 
     .headerContacto{
         grid-area: header;
-        background-image: url('../img/entrada.jpg');
+        background-image: map-get($map: $contacto, $key: imgContacto);
         background-repeat: no-repeat;
         background-size: 600px 900px;
         
 
         .logoMenu{
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
             margin-top: 0px;
             margin-bottom: 5rem;
 
@@ -596,76 +741,14 @@
 
         
     }
-    /*main sobre nosotros*/
-
-
-
-    .baseCajaHistoria{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-left: 5px solid gray;
-        margin: 30px 30px 30px 30px;
-        padding: 15px;
-        background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
-
-        .infoCajasInformacion{
-            margin: 15px;
-            text-align: center;
-
-            .imgSobreNosotros{
-                float:initial;
-                margin: 5px;
-            }
-
-        }
-    }
-
-    .baseCajaMisionVision{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-left: 5px solid gray;
-        margin: 30px 30px 30px 30px;
-        padding: 15px;
-        background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
-
-        .cajaMisionVision{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 2px solid gray;
-            padding: 10px 30px 30px 30px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .tituloValores{
-            text-align: center;
-        }
-
-        .layoutValores{
-
-            .layoutInfoValores{
-
-                .infoCajasInformacion{
-                    margin: 15px;
-                    text-align: center;
-                }
-            }
-        }
-
-
-    }
-
+   
 
     /*main de contacto*/
         
 
 
     .baseCajasInformacion1{
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
         align-items: center;
         border: 2px solid transparent;
         border-radius: 50px;
@@ -696,4 +779,6 @@
 
 }
 @import "utilities/estilos600";
+
 @import "utilities/estilos1024";
+

@@ -1,9 +1,13 @@
+
+@import "utilities/extensiones";
+
 @media only screen and (min-width:1024px){
+
     
     .contenedor{
         display: grid;
         grid-template-rows: auto;
-        grid-template-columns: 10% 40% 40% 10%;
+        grid-template-columns: 5% 45% 45% 5%;
         grid-template-areas: "header header header header"
                             "espacioBlanco1 main main espacioBlanco2"
                             "footer footer footer footer";
@@ -22,14 +26,13 @@
         header{
             grid-area: header;
             padding: 10px 10px 10px 10px;
-            background-image: url('../img/amolado.jpg');
+            background-image: map-get($map: $index, $key: imgIndex);
             background-position: center;
             background-size: cover;  
             background-repeat: no-repeat;
 
             .logoMenu{
-                display: flex;
-                flex-direction: row;
+                @include flexRow;
                 justify-content: space-between;
                 align-items: baseline;
                 margin-top: 15px;
@@ -127,8 +130,7 @@
             padding-top: 10px;
 
             .sectionImgPresentacion{
-                display: flex;
-                flex-direction: row;
+                @include flexRow;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
@@ -165,8 +167,7 @@
                     flex-direction: column;
 
                     .cajaNoticias{
-                        display: flex;
-                        flex-direction: row;               
+                        @include flexRow;               
                         background-color: rgb(171, 169, 187);
                         border: 2px solid gray;
                         padding: 10px 20px 20px 20px;
@@ -213,8 +214,7 @@
                 }
 
                 .cajaLogosEmpresas{
-                    display: flex;
-                    flex-direction: row;
+                    @include flexRow;
                     flex-wrap: wrap;
                     justify-content: center;
                     align-content: space-between;
@@ -295,13 +295,12 @@
         .headerSobreNosotros{
             grid-area: header;
             padding: 10px 10px 10px 10px;
-            background-image: url('../img/Perspectiva.jpg');
+            background-image: map-get($map: $sobreNosotros, $key: imgSobreNosotros);
             background-repeat: no-repeat;
             background-size: cover;
 
             .logoMenu{
-                display: flex;
-                flex-direction: row;
+                @include flexRow;
                 justify-content: space-between;
                 align-items: baseline;
                 margin-top: 15px;
@@ -383,13 +382,10 @@
 
 
         .baseCajaHistoria{
-            display: flex;
-            flex-direction: row;
+            @include flexRow;
             border: 2px solid transparent;
             border-left: 5px solid gray;
-            margin: 30px 30px 30px 30px;
-            padding: 15px;
-            background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
+            @include baseCajaSobreNosotros;
 
             .infoCajasInformacion{
                 text-align: start;
@@ -404,17 +400,13 @@
         }
 
         .baseCajaMisionVision{
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
             align-items: center;
             border-left: 5px solid gray;
-            margin: 30px 30px 30px 30px;
-            padding: 15px;
-            background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
+            @include baseCajaSobreNosotros;
 
             .cajaMisionVision{
-                display: flex;
-                flex-direction: column ;
+                @include flexColumn;
                 align-items: center;
                 border: 2px solid gray;
                 padding: 10px 30px 30px 30px;
@@ -426,14 +418,12 @@
             }
 
             .layoutValores{
-                display: flex;
-                flex-direction: row;
+                @include flexRow;
                 gap: 10px;
                 align-content: flex-start;
 
                 .layoutInfoValores{
-                    display: flex;
-                    flex-direction: column;
+                    @include flexColumn;
                     align-content: flex-start;
 
                     .infoCajasInformacion{
@@ -450,21 +440,101 @@
 
         /*header servicios*/
 
-        /*es el mismo que el del index. se tiene que cambiar la imagen*/
+        .headerServicios{
+            grid-area: header;
+            padding: 10px 10px 10px 10px;
+            background-image: map-get($map: $servicios, $key: imgServicios);
+            background-position: center;
+            background-size: cover;  
+            background-repeat: no-repeat;
+
+            .logoMenu{
+                @include flexRow;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-top: 15px;
+                
+
+                .logo{
+                    text-align: center; /*clase .logo*/
+
+                    img{
+                        width: 150px;
+                        height: 40px;
+                    
+                        &:hover{
+                            transform: scale(1.3) translateX(40px);
+                            }
+                    }
+                }
+            
+
+                .menu{
+                    padding: 10px;
+                    margin: 1px 15px 50px 10px;
+                    text-align: start;
+
+                    ul li{
+                        margin: 10px;
+                        list-style: none;
+                        display: inline-block;
+                        &:hover{
+                            transform: scale(1.2);
+                            color: white;
+                                
+                                }
+                            
+                        .botonNavPrincipal{
+                            text-decoration: none;
+                            color: white;
+                            font-size: 19px;
+                            background-color: rgb(17, 18, 19);
+                            border-radius: 100px;
+                            padding: 10px;
+                            &:hover{
+                                color: white;                    
+                                    }
+                            
+                        }
+                    }
+                }
+            }
+
+            .tituloLemaEmpresa{
+                font-size: 15px;
+                text-align: end;
+                color: aliceblue;
+                margin-bottom: 150px;
+                margin-right: 50px;
+
+                h1{
+                    text-align: end;
+                    font-size: 40px;
+                    color: azure;
+                }
+                
+                .lemaEmpresa{
+                    font-style: italic; /*clase .lemaEmpresa*/
+                    font-weight: bold;
+                    color: azure;
+                    text-align: end;
+                }
+            }
+
+            
+        }
 
 
         /*main servicios*/
 
         .layout{
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
+
             .layoutServicios{
-                display: flex;
-                flex-direction: row;
+                @include flexRow;
                 
                 .cajaServicios{
-                    display: flex; 
-                    flex-direction: column;
+                    @include flexColumn;
                     border-left: 5px solid gray;
                     margin: 10px;
 
@@ -474,8 +544,7 @@
                     }
 
                     .infoServicios{
-                        display: flex;
-                        flex-direction: row;
+                        @include flexRow;
                         gap: 10px;
 
                         
@@ -488,17 +557,97 @@
 
         /*header de indutrias*/
 
-        /*es el mismo que el del index. se tiene que cambiar la imagen*/
+        .headerIndustrias{
+            grid-area: header;
+            padding: 10px 10px 10px 10px;
+            background-image: map-get($map: $industrias, $key: imgIndustrias);
+            background-position: center;
+            background-size: cover;  
+            background-repeat: no-repeat;
+
+            .logoMenu{
+                @include flexRow;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-top: 15px;
+                
+
+                .logo{
+                    text-align: center; /*clase .logo*/
+
+                    img{
+                        width: 150px;
+                        height: 40px;
+                    
+                        &:hover{
+                            transform: scale(1.3) translateX(40px);
+                            }
+                    }
+                }
+            
+
+                .menu{
+                    padding: 10px;
+                    margin: 1px 15px 50px 10px;
+                    text-align: start;
+
+                    ul li{
+                        margin: 10px;
+                        list-style: none;
+                        display: inline-block;
+                        &:hover{
+                            transform: scale(1.2);
+                            color: white;
+                                
+                                }
+                            
+                        .botonNavPrincipal{
+                            text-decoration: none;
+                            color: white;
+                            font-size: 19px;
+                            background-color: rgb(17, 18, 19);
+                            border-radius: 100px;
+                            padding: 10px;
+                            &:hover{
+                                color: white;                    
+                                    }
+                            
+                        }
+                    }
+                }
+            }
+
+            .tituloLemaEmpresa{
+                font-size: 15px;
+                text-align: end;
+                color: azure;
+                margin-bottom: 150px;
+                margin-right: 50px;
+
+                h1{
+                    text-align: end;
+                    font-size: 40px;
+                    color: azure;
+                }
+                
+                .lemaEmpresa{
+                    font-style: italic; /*clase .lemaEmpresa*/
+                    font-weight: bold;
+                    color: azure;
+                    text-align: end;
+                }
+            }
+
+            
+        }
 
         /*main de indsutrias*/
 
         .layoutIndustrias{
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
 
             .cajaIndustrias{
-                display: flex;
-                flex-direction: column; 
+                @include flexColumn;
                 border-left: 5px solid gray;
                 border: 5px gray solid;
                 margin: 10px;
@@ -509,8 +658,7 @@
                 }
 
                 .infoServicios{
-                    display: flex;
-                    flex-direction: column;
+                    @include flexColumn;
                     gap: 10px;
                     margin: 10px;
 
@@ -528,14 +676,13 @@
         .headerContacto{
             grid-area: header;
             padding: 10px 10px 10px 10px;
-            background-image: url('../img/entrada.jpg');
+            background-image: map-get($map: $contacto, $key: imgContacto);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
 
             .logoMenu{
-                display: flex;
-                flex-direction: row;
+                @include flexRow;
                 justify-content: space-between;
                 align-items: baseline;
                 margin-top: 15px;
@@ -619,8 +766,7 @@
 
 
         .baseCajasInformacion1{
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
             align-items: initial;
             border: 2px solid transparent;
             border-radius: 50px;
