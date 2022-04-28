@@ -1,0 +1,784 @@
+
+@import "utilities/variables.scss";
+@import "utilities/extensiones.scss";
+
+@import "utilities/estilos600";
+
+@import "utilities/estilos1024";
+
+
+
+
+
+.contenedor{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-areas: "header header header header"
+                        "espacioBlanco1 main main espacioBlanco2"
+                        "footer footer footer footer";
+    justify-content: center;
+    align-items: center;
+    background-color: $colorFondo;
+    
+
+
+
+    /*propiedades del index*/
+
+    /*header index*/
+
+    header{
+        grid-area: header;
+        padding: 10px 10px 10px 10px;
+        background-image: map-get($map: $index, $key: imgIndex);
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .logoMenu{
+            @include flexColumn;
+            margin-top: 0px;
+            margin-bottom: 5rem;
+
+            .logo{
+                text-align: center; /*clase .logo*/
+            
+                img{
+                &:hover{
+                    transform: scale(1.05);
+                    }
+                }
+            }
+        
+
+            .menu{
+                padding: 10px;
+                margin: 1px 15px 50px 10px;
+                text-align: start;
+
+                ul li{
+                    margin: 10px;
+                    list-style: none;
+                    margin: 2rem;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: white;
+                            
+                            }
+                        
+                    .botonNavPrincipal{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 1.5rem;
+                        background-color: rgb(17, 18, 19);
+                        border: 2px solid gray;
+                        border-radius: 100px;
+                        padding: 10px;
+                        &:hover{
+                            color: white;                    
+                                }
+                        
+                    }
+                }
+        
+            }
+        }
+
+        .tituloLemaEmpresa{
+            font-style: italic; /*clase .lemaEmpresa*/
+            font-weight: bold;
+            color: azure;
+            text-align: end;
+
+            h1{
+                text-align: end;
+                font-size: 25px;
+                color: azure;
+            }
+            
+            .lemaEmpresa{
+                font-style: italic; /*clase .lemaEmpresa*/
+                font-weight: bold;
+                color: azure;
+                text-align: end;
+            }
+        }
+
+        
+    }
+        
+    
+
+
+    /*espacion en blanco index*/
+
+    .espacioBlanco1{
+        grid-area: espacioBlanco1;
+        background-color: $colorFondo;
+    }
+
+    .espacioBlanco2{
+        grid-area: espacioBlanco2;
+        background-color: $colorFondo;
+    }
+
+    /*main index*/
+
+    main{
+        grid-area: main;
+        background-color: $colorFondo;
+        padding-top: 10px;
+
+        .sectionImgPresentacion{
+            @include flexColumn;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 50px 10px 50px;
+
+            .imgPresentacion{
+                margin: 10px; 
+                width: 300px;
+                height: 200px;
+
+                &:hover{
+                    transform: scale(1.1);
+                
+                }
+            }
+
+            .noVisible{
+                display: none; 
+            }
+        }
+
+        .sectionNoticias{
+
+            @include flexColumn;
+            background-image: linear-gradient(to left, rgb(59, 58, 78), rgb(139, 151, 219));
+            padding: 0px 20px 20px 20px;
+
+            .noticias{
+                text-align: center;
+                margin: 50px 10px 10px 10px;
+                padding: 10px;
+            }
+
+            .cajaNoticiasGeneral{
+                @include flexColumn;
+
+                .cajaNoticias{
+                    @include flexColumn;
+                    align-items: center;
+                    background-color: rgb(171, 169, 187);
+                    border: 2px solid gray;
+                    padding: 10px 30px 30px 30px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+
+                    &:hover{
+                        transform: scaleY(1.035);
+                    }
+
+                    .infoNoticias{
+                        text-align: center;
+                        margin: 10px;
+                    }
+                }
+            }
+
+            .infoNoticias{
+                text-align: center;
+                margin: 10px;
+
+                .botonVerTodas{
+                    display: inline-block;
+                    text-align: center;
+                    text-decoration: none;
+                    color: black;
+                    background-color: gray;
+                    border: 1px transparent solid;
+                    border-radius: 100px;
+                    padding: 10px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+        
+                }
+            }
+
+
+        }
+
+        .sectionLogos{
+            @include flexColumn;
+
+            .cajaEncabezadoLogoEmpresas{
+                text-align: center;
+                padding-top: 50px;
+            }
+
+            .cajaLogosEmpresas{
+                @include flexRow;
+                flex-wrap: wrap; 
+                justify-content: center;
+                align-content: space-between;
+                gap: 5px;
+                border: 2px solid black;
+                text-align: center;
+                margin-bottom: 1rem;
+                padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+
+                .imgLogos{
+                    width: 7rem;
+                    height: auto;
+                    border: 1px solid gray;
+                }
+
+                .noVisible{
+                   display: none;
+                }
+                
+            }
+
+        }
+    }
+
+    /*footer index. Es el mismo para todas las paginas*/
+
+       
+
+    footer{
+        grid-area: footer;
+
+        .cajaContactoCV{
+            @keyframes aparecer{
+
+                from{
+                    transform: scale(0.95);
+                }
+                to{
+                    transform: scale(1);
+                }
+            }
+            animation-name: aparecer;
+            animation-iteration-count: infinite;
+            animation-duration: 1s; 
+            background-color: white;
+            text-align: center;  
+            padding: 20px;
+            border: 1px gray solid;
+
+            .contactoCVtrabajaConNosotros{
+                font-size: 15px;
+                color: gray;
+            }
+            
+            .contactoCVenviaTuCV{
+                font-weight: bold;
+            }
+            
+            .contactoCVmail{
+                text-decoration: none;
+                color: blue;     
+            }      
+        }
+
+        .cajaDerechosDeAutor{
+            background-color: rgb(73, 73, 151);
+            font-size: 0.75rem;
+            text-align: center;
+            color: black;
+            padding: 10px;   
+        }
+    }
+
+
+        
+    /*sobre nosotros*/
+
+    /*header sobre nosotros*/
+
+
+    .headerSobreNosotros{
+        grid-area: header;
+        padding: 10px 10px 10px 10px;
+        background-image: map-get($map: $sobreNosotros, $key: imgSobreNosotros);       
+        background-repeat: no-repeat;
+        background-size: 700px 900px ;
+
+        .logoMenu{
+            @include flexColumn;
+            margin-top: 0px;
+            margin-bottom: 5rem;
+
+            .logo{
+                text-align: center; /*clase .logo*/
+
+
+            
+                img{
+                &:hover{
+                    transform: scale(1.05);
+                    }
+                }
+            }
+        
+
+            .menu{
+                padding: 10px;
+                margin: 1px 15px 50px 10px;
+                text-align: start;
+
+                ul li{
+                    margin: 10px;
+                    list-style: none;
+                    margin: 2rem;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: white;
+                            
+                            }
+                        
+                    .botonNavPrincipal{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 1.5rem;
+                        background-color: rgb(17, 18, 19);
+                        border: 2px solid gray;
+                        border-radius: 100px;
+                        padding: 10px;
+                        &:hover{
+                            color: white;                    
+                                }
+                        
+                    }
+                }
+            }
+        }
+
+        .tituloLemaEmpresa{
+            font-style: italic; /*clase .lemaEmpresa*/
+            font-weight: bold;
+            color: azure;
+            text-align: end;
+
+            h1{
+                text-align: end;
+                font-size: 25px;
+                color: azure;
+            }
+            
+            .lemaEmpresa{
+                font-style: italic; /*clase .lemaEmpresa*/
+                font-weight: bold;
+                color: azure;
+                text-align: end;
+            }
+        }
+
+        
+    }
+    /*main sobre nosotros*/
+
+
+
+    .baseCajaHistoria{
+        @include flexColumn;
+        align-items: center;
+        border-left: 5px solid gray;
+        @extend %baseCajaSobreNosotros;
+
+        .infoCajasInformacion{
+            margin: 15px;
+            text-align: center;
+
+            .imgSobreNosotros{
+                float:initial;
+                margin: 5px;
+            }
+
+        }
+    }
+
+    .baseCajaMisionVision{
+        @include flexColumn;
+        align-items: center;
+        border-left: 5px solid gray;
+        @extend %baseCajaSobreNosotros;
+
+        .cajaMisionVision{
+            @include flexColumn;
+            align-items: center;
+            border: 2px solid gray;
+            padding: 10px 30px 30px 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tituloValores{
+            text-align: center;
+        }
+
+        .layoutValores{
+
+            .layoutInfoValores{
+
+                .infoCajasInformacion{
+                    margin: 15px;
+                    text-align: center;
+                }
+            }
+        }
+
+
+    }
+
+
+    /*propiedades de servicios */
+
+    /*header servicios*/
+
+    .headerServicios{
+        grid-area: header;
+        padding: 10px 10px 10px 10px;
+        background-image: map-get($map: $servicios, $key: imgServicios);       
+        background-repeat: no-repeat;
+        background-size: 700px 900px ;
+
+        .logoMenu{
+            @include flexColumn;
+            margin-top: 0px;
+            margin-bottom: 5rem;
+
+            .logo{
+                text-align: center; /*clase .logo*/
+
+
+            
+                img{
+                &:hover{
+                    transform: scale(1.05);
+                    }
+                }
+            }
+        
+
+            .menu{
+                padding: 10px;
+                margin: 1px 15px 50px 10px;
+                text-align: start;
+
+                ul li{
+                    margin: 10px;
+                    list-style: none;
+                    margin: 2rem;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: white;
+                            
+                            }
+                        
+                    .botonNavPrincipal{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 1.5rem;
+                        background-color: rgb(17, 18, 19);
+                        border: 2px solid gray;
+                        border-radius: 100px;
+                        padding: 10px;
+                        &:hover{
+                            color: white;                    
+                                }
+                        
+                    }
+                }
+            }
+        }
+
+        .tituloLemaEmpresa{
+            font-style: italic; /*clase .lemaEmpresa*/
+            font-weight: bold;
+            color: azure;
+            text-align: end;
+
+            h1{
+                text-align: end;
+                font-size: 25px;
+                color: azure;
+            }
+            
+            .lemaEmpresa{
+                font-style: italic; /*clase .lemaEmpresa*/
+                font-weight: bold;
+                color: azure;
+                text-align: end;
+            }
+        }
+
+        
+    }
+
+
+    /*main servicios*/
+
+    .layout{
+
+        .layoutServicios{
+            
+            .cajaServicios{
+                @include flexColumn;
+            
+                border-left: 5px solid gray;
+                border-bottom: 5px gray solid;
+                margin: 10px;
+
+                .encabezadoServicios{
+                    background-color: $colorEncabezado ;
+                    text-align: center;
+                }
+
+                .infoServicios{
+                    @include flexColumn;
+                    gap: 10px;
+                    margin: 10px;
+
+                    
+                }
+            }
+        }
+    }
+
+
+    /*propiedades de industrias*/
+
+    /*header de indutrias*/
+
+    .headerIndustrias{
+        grid-area: header;
+        padding: 10px 10px 10px 10px;
+        background-image: map-get($map: $industrias, $key: imgIndustrias);       
+        background-repeat: no-repeat;
+        background-size: 700px 900px ;
+
+        .logoMenu{
+            @include flexColumn;
+            margin-top: 0px;
+            margin-bottom: 5rem;
+
+            .logo{
+                text-align: center; /*clase .logo*/
+
+
+            
+                img{
+                &:hover{
+                    transform: scale(1.05);
+                    }
+                }
+            }
+        
+
+            .menu{
+                padding: 10px;
+                margin: 1px 15px 50px 10px;
+                text-align: start;
+
+                ul li{
+                    margin: 10px;
+                    list-style: none;
+                    margin: 2rem;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: white;
+                            
+                            }
+                        
+                    .botonNavPrincipal{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 1.5rem;
+                        background-color: rgb(17, 18, 19);
+                        border: 2px solid gray;
+                        border-radius: 100px;
+                        padding: 10px;
+                        &:hover{
+                            color: white;                    
+                                }
+                        
+                    }
+                }
+            }
+        }
+
+        .tituloLemaEmpresa{
+            font-style: italic; /*clase .lemaEmpresa*/
+            font-weight: bold;
+            color: azure;
+            text-align: end;
+
+            h1{
+                text-align: end;
+                font-size: 25px;
+                color: azure;
+            }
+            
+            .lemaEmpresa{
+                font-style: italic; /*clase .lemaEmpresa*/
+                font-weight: bold;
+                color: azure;
+                text-align: end;
+            }
+        }
+
+        
+    }
+
+    /*main de indsutrias*/
+
+    .layoutIndustrias{
+        @include flexColumn;
+
+        .cajaIndustrias{
+            @include flexColumn; 
+            border: 5px gray solid;
+            margin: 10px;
+
+            .encabezadoServicios{
+                background-color:  $colorEncabezado ;
+                text-align: center;
+            }
+
+            .infoServicios{
+                @include flexColumn;
+                gap: 10px;
+                margin: 10px;
+
+            }
+
+        }
+
+    }
+
+
+    /*propiedades de contacto*/
+
+    /*header contacto*/
+
+    .headerContacto{
+        grid-area: header;
+        background-image: map-get($map: $contacto, $key: imgContacto);
+        background-repeat: no-repeat;
+        background-size: 600px 900px;
+        
+
+        .logoMenu{
+            @include flexColumn;
+            margin-top: 0px;
+            margin-bottom: 5rem;
+
+            .logo{
+                text-align: center; /*clase .logo*/
+            
+                img{
+                &:hover{
+                    transform: scale(1.05);
+                    }
+                }
+            }
+        
+
+            .menu{
+                padding: 10px;
+                margin: 1px 15px 50px 10px;
+                text-align: start;
+
+                ul li{
+                    margin: 10px;
+                    list-style: none;
+                    margin: 2rem;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: white;
+                            
+                            }
+                        
+                    .botonNavPrincipal{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 1.5rem;
+                        background-color: rgb(17, 18, 19);
+                        border: 2px solid gray;
+                        border-radius: 100px;
+                        padding: 10px;
+                        &:hover{
+                            color: white;                    
+                                }
+                        
+                    }
+                }
+            }
+
+        }
+
+        .tituloLemaEmpresa{
+            font-style: italic; /*clase .lemaEmpresa*/
+            font-weight: bold;
+            color: azure;
+            text-align: end;
+
+            h1{
+                text-align: end;
+                font-size: 25px;
+                color: azure;
+            }
+            
+            .lemaEmpresa{
+                font-style: italic; /*clase .lemaEmpresa*/
+                font-weight: bold;
+                color: azure;
+                text-align: end;
+            }
+        }
+
+        
+    }
+   
+
+    /*main de contacto*/
+        
+
+
+    .baseCajasInformacion1{
+        @include flexColumn;
+        align-items: center;
+        border: 2px solid transparent;
+        border-radius: 50px;
+        margin: 30px 30px 30px 30px;
+        padding: 30px;
+        background-color: gray;         
+                
+    }
+
+
+    .comoLLegar{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .datos{
+        font-size: 15px;
+        color: gray;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .imgUbicacion{
+        border: 2px solid gray;
+    }
+
+
+
+}
+@import "utilities/estilos600";
+
+@import "utilities/estilos1024";
+

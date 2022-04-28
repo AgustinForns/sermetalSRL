@@ -1,0 +1,49 @@
+@mixin flexRow{
+    display: flex;
+    flex-direction: row;
+};
+
+@mixin flexColumn{
+    display: flex;
+    flex-direction: column;
+};
+
+@mixin baseCajaSobreNosotros {
+    margin: 30px 30px 30px 30px;
+    padding: 15px;
+    background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
+}
+
+%baseCajaSobreNosotros {
+    margin: 30px 30px 30px 30px;
+    padding: 15px;
+    background-image: linear-gradient(to left, rgb(199, 198, 207), rgb(170, 170, 175));
+};
+
+
+
+
+ 
+
+$index: (
+    imgIndex: url('../img/amolado.jpg'),
+);
+
+$sobreNosotros: (
+    imgSobreNosotros: url('../img/Perspectiva.jpg'),
+);
+
+$servicios:(
+    imgServicios: url('../img/servicios.jpg'),
+);
+
+$industrias: (
+    imgIndustrias: url('../img/industrias.jpg'),
+);
+
+$contacto: (
+    imgContacto: url('../img/entrada.jpg'),
+);
+
+
+
